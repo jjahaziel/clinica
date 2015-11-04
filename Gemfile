@@ -94,8 +94,11 @@ gem 'bootstrap-datepicker-rails'
 # NESTED FORM
 gem "cocoon"
 
+
 # DEPLOY WITH CAPISTRANO
-gem 'capistrano', '~> 3.4'
-gem 'capistrano-rails', '~> 1.1'
-# Add this if you're using rbenv
-gem 'capistrano-rbenv', github: "capistrano/rbenv"
+group :development do
+	gem 'capistrano', '~> 3.4.0'
+	gem 'capistrano-rails', '~> 1.1.3'
+	# Add this if you're using rbenv
+	gem 'capistrano-rbenv', github: "capistrano/rbenv"
+end
