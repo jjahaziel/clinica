@@ -7,6 +7,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '7eeeea64b59a2ed949e7fafcc4fa47c25acbd1378d49c98337844db8a973cbe779641e10b63582856a73b7ed93ca74e6b74401ef1c9a576dd9861c35eb985bdb'
+  config.secret_key = ENV[ 'DEVISE_TOKEN_AUTH_SECRET_KEY' ]
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -96,7 +97,7 @@ Devise.setup do |config|
   # a value less than 10 in other environments. Note that, for bcrypt (the default
   # encryptor), the cost increases exponentially with the number of stretches (e.g.
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
-  config.stretches = Rails.env.test? ? 1 : 10
+config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
   # config.pepper = 'ce208ca20de03aabef4e32bb738ce6ffe803756ca0fb7a394800cf10c37f7284a97e1cb4d9f707e25e24de7d9c8c6ba1b7ad64e9bd9d0f771e4d3e656f8988d3'
