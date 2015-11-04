@@ -1,0 +1,47 @@
+<div class="page-header">
+  <%= link_to new_recibo_path, class: 'btn btn-primary' do %>
+  <span class="glyphicon glyphicon-plus"></span>
+  <%= t('new')%> Recibo
+  <% end %>
+  <h1><%= t('listing')%> <%= t('recibo', :default => 'recibo').humanize.pluralize %></h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th><%= t('numero_recibo', :default => 'numero_recibo').humanize %></th>
+        <th><%= t('nombre', :default => 'nombre').humanize %></th>
+        <th><%= t('total', :default => 'total').humanize %></th>
+        <th><%= t('total_porcentaje_doctor', :default => 'total_porcentaje_doctor').humanize %></th>
+        <th><%= t('total_porcenteje_clinica', :default => 'total_porcenteje_clinica').humanize %></th>
+        <th><%= t('total_porcentaje_laboratorio', :default => 'total_porcentaje_laboratorio').humanize %></th>
+        <th><%= t('paciente', :default => 'paciente').humanize %></th>
+        <th><%= t('doctor', :default => 'doctor').humanize %></th>
+        <th><%= t('caja', :default => 'caja').humanize %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @recibos) do |recibo| %>
+      
+      <td><%= recibo.numero_recibo %></td>                      
+      <td><%= recibo.nombre %></td>  
+      <td><%= recibo.total %></td> 
+      <td><%= recibo.total_porcentaje_doctor %></td> 
+      <td><%= recibo.total_porcenteje_clinica %></td> 
+      <td><%= recibo.total_porcentaje_laboratorio %></td> 
+      <td><%= recibo.paciente.name unless recibo.paciente.nil? %></td>
+      <td><%= recibo.doctor.name unless recibo.doctor.nil? %></td>
+      <td><%= recibo.caja.name unless recibo.caja.nil? %></td>
+      
+      <td><%= link_to t('show'), recibo %></td>
+      <td><%= link_to t('edit'), edit_recibo_path(recibo) %></td>
+      <td><%= link_to t('destroy'), recibo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

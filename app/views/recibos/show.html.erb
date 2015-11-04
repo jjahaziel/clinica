@@ -1,0 +1,50 @@
+<div class="page-header">
+  <%= link_to recibos_path, class: 'btn btn-default' do %>
+  <span class="glyphicon glyphicon-list-alt"></span>
+  <%= t('back')%>
+  <% end %>
+  <%= link_to edit_recibo_path(@recibo), class: 'btn btn-primary' do %>
+  <span class="glyphicon glyphicon-pencil"></span>
+  <%= t('edit')%>
+  <% end %>
+  <h1><%= t('show')%> <%= t('recibo', :default => 'recibo').humanize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><%= t('numero_recibo', :default => 'numero_recibo').humanize %>:</dt>
+  
+  <dd><%= @recibo.numero_recibo %></dd>   
+  
+  <dt><%= t('nombre', :default => 'nombre').humanize %>:</dt>
+  
+  <dd><%= @recibo.paciente %></dd>   
+  
+  <dt><%= t('total', :default => 'total').humanize %>:</dt>
+  
+  <dd><%= @recibo.total %></dd>   
+  
+  <dt><%= t('total_porcentaje_doctor', :default => 'total_porcentaje_doctor').humanize %>:</dt>
+  
+  <dd><%= @recibo.total_porcentaje_doctor %></dd>   
+  
+  <dt><%= t('total_porcenteje_clinica', :default => 'total_porcenteje_clinica').humanize %>:</dt>
+  
+  <dd><%= @recibo.total_porcenteje_clinica %></dd>   
+  
+  <dt><%= t('total_porcentaje_laboratorio', :default => 'total_porcentaje_laboratorio').humanize %>:</dt>
+  
+  <dd><%= @recibo.total_porcentaje_laboratorio %></dd>   
+  
+  <dt><%= t('paciente', :default => 'paciente').humanize %>:</dt>
+  
+  <dd><%= @recibo.paciente.name unless @recibo.paciente.nil? %></dd>
+  
+  <dt><%= t('doctor', :default => 'doctor').humanize %>:</dt>
+  
+  <dd><%= @recibo.doctor.name unless @recibo.doctor.nil? %></dd>
+  
+  <dt><%= t('caja', :default => 'caja').humanize %>:</dt>
+  
+  <dd><%= @recibo.caja.name unless @recibo.caja.nil? %></dd>
+  
+</dl>

@@ -1,0 +1,10 @@
+<li class="dropdown">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Logged in as <strong>
+		<%= current_user.email %> 
+	</strong><b class="caret"></b></a>
+	<ul class="dropdown-menu">
+		<li><a href="/d/edit"> Perfil</a></li>
+		<li class="divider"></li>
+		<li><%= link_to "Logout", destroy_user_session_path, method: :delete  %></li>
+	</ul>
+</li>

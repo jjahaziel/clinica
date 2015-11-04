@@ -1,0 +1,66 @@
+<div class="page-header">
+  <%= link_to personas_path, class: 'btn btn-default' do %>
+  <span class="glyphicon glyphicon-list-alt"></span>
+  <%= t('back')%>
+  <% end %>
+  <%= link_to edit_persona_path(@persona), class: 'btn btn-primary' do %>
+  <span class="glyphicon glyphicon-pencil"></span>
+  <%= t('edit')%>
+  <% end %>
+  <h1><%= t('show')%> <%= t('persona', :default => 'persona').humanize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><%= t('cedula', :default => 'cedula').humanize %>:</dt>
+  
+  <dd><%= @persona.cedula %></dd>   
+  
+  <dt><%= t('primer_nombre', :default => 'primer_nombre').humanize %>:</dt>
+  
+  <dd><%= @persona.primer_nombre %></dd>   
+  
+  <dt><%= t('segundo_nombre', :default => 'segundo_nombre').humanize %>:</dt>
+  
+  <dd><%= @persona.segundo_nombre %></dd>   
+  
+  <dt><%= t('primer_apellido', :default => 'primer_apellido').humanize %>:</dt>
+  
+  <dd><%= @persona.primer_apellido %></dd>   
+  
+  <dt><%= t('segundo_apellido', :default => 'segundo_apellido').humanize %>:</dt>
+  
+  <dd><%= @persona.segundo_apellido %></dd>   
+  
+  <dt><%= t('apellido_casada', :default => 'apellido_casada').humanize %>:</dt>
+  
+  <dd><%= @persona.apellido_casada %></dd>   
+  
+  <dt><%= t('fecha_nacimiento', :default => 'fecha_nacimiento').humanize %>:</dt>
+  
+  <dd><%= @persona.fecha_nacimiento %></dd>   
+  
+  <dt><%= t('sexo', :default => 'sexo').humanize %>:</dt>
+  
+  <dd><%= @persona.sexo %></dd>   
+  
+  <dt><%= t('seguro_social', :default => 'seguro_social').humanize %>:</dt>
+  
+  <dd><%= @persona.seguro_social %></dd>   
+  
+  <dt><%= t('direccion', :default => 'direccion').humanize %>:</dt>
+  
+  <dd><%= @persona.direccion %></dd>   
+  
+  <dt><%= t('telefono', :default => 'telefono').humanize %>:</dt>
+  
+  <dd><%= @persona.telefono %></dd>   
+  
+  <dt><%= t('contacto_emergencia', :default => 'contacto_emergencia').humanize %>:</dt>
+  
+  <dd><%= @persona.contacto_emergencia %></dd>   
+  
+  <dt><%= t('telefono_emergencia', :default => 'telefono_emergencia').humanize %>:</dt>
+  
+  <dd><%= @persona.telefono_emergencia %></dd>   
+  
+</dl>

@@ -1,0 +1,26 @@
+<div class="page-header">
+  <%= link_to doctores_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    <%= t('back')%>
+  <% end %>
+  <%= link_to edit_doctor_path(@doctor), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    <%= t('edit')%>
+  <% end %>
+  <h1><%= t('show')%> <%= t('doctor', :default => 'doctor').humanize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+              <dt><%= t('numero_doctor', :default => 'numero_doctor').humanize %>:</dt>
+        
+        <dd><%= @doctor.numero_doctor %></dd>   
+     
+                    <dt><%= t('especialidades', :default => 'especialidades').humanize %>:</dt>
+        
+        <dd><%= @doctor.especialidades %></dd>   
+     
+                    <dt><%= t('persona', :default => 'persona').humanize %>:</dt>
+        
+        <dd><%= @doctor.persona.name %></dd>
+     
+      </dl>

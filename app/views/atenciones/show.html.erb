@@ -1,0 +1,30 @@
+<div class="page-header">
+  <%= link_to atenciones_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    <%= t('back')%>
+  <% end %>
+  <%= link_to edit_atencion_path(@atencion), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    <%= t('edit')%>
+  <% end %>
+  <h1><%= t('show')%> <%= t('atencion', :default => 'atencion').humanize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+              <dt><%= t('cantidad', :default => 'cantidad').humanize %>:</dt>
+        
+        <dd><%= @atencion.cantidad %></dd>   
+     
+                    <dt><%= t('descuento', :default => 'descuento').humanize %>:</dt>
+        
+        <dd><%= @atencion.descuento %></dd>   
+     
+                    <dt><%= t('recibo', :default => 'recibo').humanize %>:</dt>
+        
+        <dd><%= @atencion.recibo.name %></dd>
+     
+                    <dt><%= t('servicio', :default => 'servicio').humanize %>:</dt>
+        
+        <dd><%= @atencion.servicio.name %></dd>
+     
+      </dl>

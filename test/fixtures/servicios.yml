@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  codigo: MyString
+  precio: 9.99
+  porcentaje_clinica: 9.99
+  porcentaje_doctor: 9.99
+  porcentaje_laboratorio: 9.99
+  servicio_tipo_id: 
+
+two:
+  nombre: MyString
+  codigo: MyString
+  precio: 9.99
+  porcentaje_clinica: 9.99
+  porcentaje_doctor: 9.99
+  porcentaje_laboratorio: 9.99
+  servicio_tipo_id: 

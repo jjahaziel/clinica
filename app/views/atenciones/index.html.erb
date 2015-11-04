@@ -1,0 +1,47 @@
+<div class="page-header">
+  <%= link_to new_atencion_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    <%= t('new')%> Atencion
+  <% end %>
+  <h1><%= t('listing')%> <%= t('atencion', :default => 'atencion').humanize.pluralize %></h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+                <th><%= t('cantidad', :default => 'cantidad').humanize %></th>
+                      <th><%= t('descuento', :default => 'descuento').humanize %></th>
+                      <th><%= t('recibo', :default => 'recibo').humanize %></th>
+                      <th><%= t('servicio', :default => 'servicio').humanize %></th>
+                  <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @atenciones) do |atencion| %>
+                  
+        <td><%= atencion.cantidad %></td> 
+     
+      
+                  
+        <td><%= atencion.descuento %></td> 
+     
+      
+              
+        <td><%= atencion.recibo.name %></td>
+     
+      
+              
+        <td><%= atencion.servicio.name %></td>
+     
+      
+            <td><%= link_to t('show'), atencion %></td>
+        <td><%= link_to t('edit'), edit_atencion_path(atencion) %></td>
+        <td><%= link_to t('destroy'), atencion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

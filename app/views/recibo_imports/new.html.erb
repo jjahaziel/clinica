@@ -1,0 +1,47 @@
+<div class="page-header">
+  <%= link_to recibo_imports_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    <%= t('back')%>
+  <% end %>
+  <h1><%= t('new')%> <%= t('recibo_import', :default => 'recibo_import').humanize %></h1>
+</div>
+
+<%= form_for @recibo_import do |f| %>
+<% if @recibo_import.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@recibo_import.errors.count, "error") %> prohibited this import from completing:</h2>
+	<ul>
+		<% @recibo_import.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<p>A CSV or Excel file can be used to import records. The first row should be the column name. The following columns are allowed.</p>
+
+<ul>
+	<li><strong> numero_recibo - </strong>Integer type</li>
+	<li><strong> nombre - </strong>String type</li>
+	<li><strong> total - </strong>Decimal type</li>
+	<li><strong> total_porcentaje_doctor - </strong>Decimal type</li>
+	<li><strong> total_porcentaje_clinica - </strong>Decimal type</li>
+	<li><strong> total_porcentaje_laboratorio - </strong>Decimal type</li>
+	<li><strong> doctor_id - </strong>Integer type</li>
+	<li><strong> caja_id - </strong>Integer type</li>
+	<li><strong> paciente_id - </strong>Integer type</li>
+</ul>
+
+<br>
+<div class="form-group">
+	<%= f.label :archivo, :class => "col-sm-1 control-label" %>
+	<div class="col-sm-4">
+		<%= f.file_field :file, {class: "filestyle"} %>
+	</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<%= f.submit :class => "btn btn-primary" %>
+<% end %>

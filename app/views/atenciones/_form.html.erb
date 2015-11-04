@@ -1,0 +1,60 @@
+<%= form_for(@atencion, html: { class: "form-horizontal", role: "form" }) do |f| %>
+<% if @atencion.errors.any? %>
+<div class="alert alert-danger alert-dismissable" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only"><%= t('close')%></span></button>
+  <h4><%= pluralize(@atencion.errors.count, "error") %> prohibited this atencion from being saved:</h4>
+
+  <ul>
+    <% @atencion.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  
+<div class="form-group">
+  <%= f.label t('cantidad', :default => 'cantidad').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+        
+    <%= f.text_field :cantidad, class: "form-control" %>    
+      
+  </div>
+</div>
+
+  
+<div class="form-group">
+  <%= f.label t('descuento', :default => 'descuento').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+        
+    <%= f.text_field :descuento, class: "form-control" %>    
+      
+  </div>
+</div>
+
+  
+<div class="form-group">
+  <%= f.label t('recibo', :default => 'recibo').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+           
+    <%= f.collection_select :recibo_id, Recibo.all, :id, :name, {prompt: false}, {class: "form-control"}  %>
+      
+  </div>
+</div>
+
+  
+<div class="form-group">
+  <%= f.label t('servicio', :default => 'servicio').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+           
+    <%= f.collection_select :servicio_id, Servicio.all, :id, :name, {prompt: false}, {class: "form-control"}  %>
+      
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+</div>
+<% end %>

@@ -1,0 +1,1 @@
+json.extract! @persona, :id, :cedula, :primer_nombre, :segundo_nombre, :primer_apellido, :segundo_apellido, :apellido_casada, :fecha_nacimiento, :sexo, :seguro_social, :direccion, :telefono, :contacto_emergencia, :telefono_emergencia, :created_at, :updated_at

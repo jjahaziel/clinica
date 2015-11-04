@@ -1,0 +1,13 @@
+<div class="page-header">
+  <%= link_to servicio_tipos_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    <%= t('back')%>
+  <% end %>
+  <%= link_to @servicio_tipo, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-info-sign"></span>
+    <%= t('show')%>
+  <% end %>
+  <h1><%= t('editing')%> <%= t('servicio_tipo', :default => 'servicio_tipo').humanize %></h1>
+</div>
+
+<%= render 'form' %>

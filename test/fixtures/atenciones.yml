@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cantidad: 9.99
+  descuento: 9.99
+  recibo_id: 
+  servicio_id: 
+
+two:
+  cantidad: 9.99
+  descuento: 9.99
+  recibo_id: 
+  servicio_id: 

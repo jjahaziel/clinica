@@ -1,0 +1,127 @@
+<%= form_for(@caja, html: { class: "form-horizontal", role: "form" }) do |f| %>
+<% if @caja.errors.any? %>
+<div class="alert alert-danger alert-dismissable" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only"><%= t('close')%></span></button>
+  <h4><%= pluralize(@caja.errors.count, "error") %> prohibited this caja from being saved:</h4>
+
+  <ul>
+    <% @caja.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  
+<div class="form-group">
+  <%= f.label t('numero_cajero', :default => 'numero_cajero').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+        
+    <%= f.text_field :numero_cajero, class: "form-control" %>    
+      
+  </div>
+</div>
+
+  
+<%= f.fields_for :persona do |persona| %>
+<div class="form-group">
+  <%= persona.label t('cedula', :default => 'cedula').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">        
+    <%= persona.text_field :cedula, class: "form-control" %>       
+  </div>
+</div>
+
+<div class="form-group">
+  <%= persona.label t('primer_nombre', :default => 'primer_nombre').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= persona.text_field :primer_nombre, class: "form-control" %>    
+  </div>
+</div>
+
+<div class="form-group">
+  <%= persona.label t('segundo_nombre', :default => 'segundo_nombre').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= persona.text_field :segundo_nombre, class: "form-control" %>    
+  </div>
+</div>
+
+<div class="form-group">
+  <%= persona.label t('primer_apellido', :default => 'primer_apellido').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= persona.text_field :primer_apellido, class: "form-control" %>    
+  </div>
+</div>
+
+<div class="form-group">
+  <%= persona.label t('segundo_apellido', :default => 'segundo_apellido').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= persona.text_field :segundo_apellido, class: "form-control" %>    
+  </div>
+</div>
+
+<div class="form-group">
+  <%= persona.label t('apellido_casada', :default => 'apellido_casada').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= persona.text_field :apellido_casada, class: "form-control" %>  
+  </div>
+</div>
+
+<div class="form-group">
+  <%= persona.label t('fecha_nacimiento', :default => 'fecha_nacimiento').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <div class="input-group ">
+      <%= persona.text_field :fecha_nacimiento, :class => 'datepicker form-control', :placeholder => "  Fecha de nacimiento"    %>
+      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= persona.label t('sexo', :default => 'sexo').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= persona.select :sexo, options_for_select(['Masculino','Femenino']), {}, {class: "form-control"} %>  
+  </div>
+</div>
+
+<div class="form-group">
+  <%= persona.label t('seguro_social', :default => 'seguro_social').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= persona.text_field :seguro_social, class: "form-control" %>    
+  </div>
+</div>
+
+<div class="form-group">
+  <%= persona.label t('direccion', :default => 'direccion').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= persona.text_area :direccion, class: "form-control" %>    
+  </div>
+</div>
+
+<div class="form-group">
+  <%= persona.label t('telefono', :default => 'telefono').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= persona.text_field :telefono, class: "form-control" %>    
+  </div>
+</div>
+
+<div class="form-group">
+  <%= persona.label t('contacto_emergencia', :default => 'contacto_emergencia').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= persona.text_field :contacto_emergencia, class: "form-control" %>    
+  </div>
+</div>
+
+<div class="form-group">
+  <%= persona.label t('telefono_emergencia', :default => 'telefono_emergencia').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+    <%= persona.text_field :telefono_emergencia, class: "form-control" %>    
+  </div>
+</div>
+<% end %>
+
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+</div>
+<% end %>

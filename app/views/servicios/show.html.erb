@@ -1,0 +1,42 @@
+<div class="page-header">
+  <%= link_to servicios_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    <%= t('back')%>
+  <% end %>
+  <%= link_to edit_servicio_path(@servicio), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    <%= t('edit')%>
+  <% end %>
+  <h1><%= t('show')%> <%= t('servicio', :default => 'servicio').humanize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+              <dt><%= t('nombre', :default => 'nombre').humanize %>:</dt>
+        
+        <dd><%= @servicio.nombre %></dd>   
+     
+                    <dt><%= t('codigo', :default => 'codigo').humanize %>:</dt>
+        
+        <dd><%= @servicio.codigo %></dd>   
+     
+                    <dt><%= t('precio', :default => 'precio').humanize %>:</dt>
+        
+        <dd><%= @servicio.precio %></dd>   
+     
+                    <dt><%= t('porcentaje_clinica', :default => 'porcentaje_clinica').humanize %>:</dt>
+        
+        <dd><%= @servicio.porcentaje_clinica %></dd>   
+     
+                    <dt><%= t('porcentaje_doctor', :default => 'porcentaje_doctor').humanize %>:</dt>
+        
+        <dd><%= @servicio.porcentaje_doctor %></dd>   
+     
+                    <dt><%= t('porcentaje_laboratorio', :default => 'porcentaje_laboratorio').humanize %>:</dt>
+        
+        <dd><%= @servicio.porcentaje_laboratorio %></dd>   
+     
+                    <dt><%= t('servicio_tipo', :default => 'servicio_tipo').humanize %>:</dt>
+        
+        <dd><%= @servicio.servicio_tipo.name %></dd>
+     
+      </dl>

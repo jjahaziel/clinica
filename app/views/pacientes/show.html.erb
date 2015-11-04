@@ -1,0 +1,92 @@
+<div class="page-header">
+  <%= link_to pacientes_path, class: 'btn btn-default' do %>
+  <span class="glyphicon glyphicon-list-alt"></span>
+  <%= t('back')%>
+  <% end %>
+  <%= link_to edit_paciente_path(@paciente), class: 'btn btn-primary' do %>
+  <span class="glyphicon glyphicon-pencil"></span>
+  <%= t('edit')%>
+  <% end %>
+  <h1><%= t('show')%> <%= t('paciente', :default => 'paciente').humanize %></h1>
+</div>
+
+
+<p><%= link_to "Imprimir Paciente (PDF)", paciente_path(@paciente, format: "pdf") %></p>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+pacientes_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+edit_paciente_path(@paciente), :class => 'btn btn-default' %>
+
+<br \>
+<br \>
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><h3>Paciente - Clinica La Familia</h3></div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="row-fluid">
+        <div class="span8">
+          <label><strong><%= t('created_at', :default => 'fecha_de_creacion').humanize %>:</strong>
+            <%= @paciente.created_at %>
+          </label>
+        </div>
+        <div class="span4">
+          <label><strong><%= t('numero_paciente', :default => 'numero_paciente').humanize %>:</strong>
+            <%= @paciente.numero_paciente %>
+          </label>
+        </div>
+      </div>
+
+      <div class="row-fluid">
+        <div class="span8">
+          <label><strong><%= t('name', :default => 'nombre_completo').humanize %>:</strong>
+          <%= @paciente.persona.name %>
+          </label>
+        </div>
+        <div class="span4">
+          <label><strong><%= t('cedula', :default => 'cedula').humanize %>:</strong>
+          <%= @paciente.persona.cedula %>
+          </label>
+        </div>
+      </div>
+
+      <div class="row-fluid">
+        <div class="span8">
+          <label><strong><%= t('fecha_nacimiento', :default => 'fecha_nacimiento').humanize %>:</strong>
+          <%= @paciente.persona.fecha_nacimiento %>
+          </label>
+        </div>
+        <div class="span4">
+          <label><strong><%= t('sexo', :default => 'sexo').humanize %>:</strong>
+          <%= @paciente.persona.sexo %>
+          </label>
+        </div>
+      </div>
+
+      <div class="row-fluid">
+        <div class="span8">
+          <label><strong><%= t('contacto_emergencia', :default => 'contacto_emergencia').humanize %>:</strong>
+          <%= @paciente.persona.contacto_emergencia %>
+          </label>
+        </div>
+        <div class="span4">
+          <label><strong><%= t('telefono', :default => 'telefono').humanize %>:</strong>
+          <%= @paciente.persona.telefono %>
+          </label>
+        </div>
+      </div>
+
+      <div class="row-fluid">
+        <div class="span12">
+          <label><strong><%= t('direccion', :default => 'direccion').humanize %>:</strong>
+          <%= @paciente.persona.direccion %>
+          </label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+

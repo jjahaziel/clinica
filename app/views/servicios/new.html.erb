@@ -1,0 +1,9 @@
+<div class="page-header">
+  <%= link_to servicios_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    <%= t('back')%>
+  <% end %>
+  <h1><%= t('new')%> <%= t('servicio', :default => 'servicio').humanize %></h1>
+</div>
+
+<%= render 'form' %>

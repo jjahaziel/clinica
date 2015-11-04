@@ -1,0 +1,25 @@
+<div class="page-header">
+  <%%= link_to <%= index_helper %>_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    <%%= t('back')%>
+  <%% end %>
+  <%%= link_to edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    <%%= t('edit')%>
+  <%% end %>
+  <h1><%%= t('show')%> <%%= t('<%= singular_table_name %>', :default => '<%= singular_table_name %>').humanize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <%- attributes.each do |attribute| -%>
+      <% if attribute.name.slice(-3,3) == "_id" -%>
+      <% else -%>
+        <dt><%%= t('<%= attribute.name %>', :default => '<%= attribute.name %>').humanize %>:</dt>
+    <% if attribute.reference? %>    
+        <dd><%%= @<%= singular_table_name %>.<%= attribute.name %>.name %></dd>
+    <% else %>    
+        <dd><%%= @<%= singular_table_name %>.<%= attribute.name %> %></dd>   
+    <% end %> 
+      <% end -%>
+  <%- end -%>
+</dl>

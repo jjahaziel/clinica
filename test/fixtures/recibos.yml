@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numero_recibo: 1
+  paciente: MyString
+  total: 9.99
+  total_porcentaje_doctor: 9.99
+  total_porcenteje_clinica: 9.99
+  total_porcentaje_laboratorio: 9.99
+  paciente_id: 
+  doctor_id: 
+  caja_id: 
+
+two:
+  numero_recibo: 1
+  paciente: MyString
+  total: 9.99
+  total_porcentaje_doctor: 9.99
+  total_porcenteje_clinica: 9.99
+  total_porcentaje_laboratorio: 9.99
+  paciente_id: 
+  doctor_id: 
+  caja_id: 

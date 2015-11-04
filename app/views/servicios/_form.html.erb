@@ -1,0 +1,90 @@
+<%= form_for(@servicio, html: { class: "form-horizontal", role: "form" }) do |f| %>
+<% if @servicio.errors.any? %>
+<div class="alert alert-danger alert-dismissable" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only"><%= t('close')%></span></button>
+  <h4><%= pluralize(@servicio.errors.count, "error") %> prohibited this servicio from being saved:</h4>
+
+  <ul>
+    <% @servicio.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  
+<div class="form-group">
+  <%= f.label t('nombre', :default => 'nombre').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+        
+    <%= f.text_field :nombre, class: "form-control" %>    
+      
+  </div>
+</div>
+
+  
+<div class="form-group">
+  <%= f.label t('codigo', :default => 'codigo').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+        
+    <%= f.text_field :codigo, class: "form-control" %>    
+      
+  </div>
+</div>
+
+  
+<div class="form-group">
+  <%= f.label t('precio', :default => 'precio').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+        
+    <%= f.text_field :precio, class: "form-control" %>    
+      
+  </div>
+</div>
+
+  
+<div class="form-group">
+  <%= f.label t('porcentaje_clinica', :default => 'porcentaje_clinica').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+        
+    <%= f.text_field :porcentaje_clinica, class: "form-control" %>    
+      
+  </div>
+</div>
+
+  
+<div class="form-group">
+  <%= f.label t('porcentaje_doctor', :default => 'porcentaje_doctor').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+        
+    <%= f.text_field :porcentaje_doctor, class: "form-control" %>    
+      
+  </div>
+</div>
+
+  
+<div class="form-group">
+  <%= f.label t('porcentaje_laboratorio', :default => 'porcentaje_laboratorio').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+        
+    <%= f.text_field :porcentaje_laboratorio, class: "form-control" %>    
+      
+  </div>
+</div>
+
+  
+<div class="form-group">
+  <%= f.label t('servicio_tipo', :default => 'servicio_tipo').humanize, class: "col-sm-2 control-label" %>
+  <div class="col-sm-10">
+           
+    <%= f.collection_select :servicio_tipo_id, ServicioTipo.all, :id, :name, {prompt: false}, {class: "form-control"}  %>
+      
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+</div>
+<% end %>

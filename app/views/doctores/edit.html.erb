@@ -1,0 +1,13 @@
+<div class="page-header">
+  <%= link_to doctores_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    <%= t('back')%>
+  <% end %>
+  <%= link_to @doctor, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-info-sign"></span>
+    <%= t('show')%>
+  <% end %>
+  <h1><%= t('editing')%> <%= t('doctor', :default => 'doctor').humanize %></h1>
+</div>
+
+<%= render 'form' %>
