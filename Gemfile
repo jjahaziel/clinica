@@ -100,5 +100,5 @@ group :development do
 	gem 'capistrano', '~> 3.4.0'
 	gem 'capistrano-rails', '~> 1.1.3'
 	# Add this if you're using rbenv
-	gem 'capistrano-rbenv', github: "capistrano/rbenv"
+	gem 'capistrano-rbenv'
 end
