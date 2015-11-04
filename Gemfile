@@ -101,4 +101,5 @@ group :development do
 	gem 'capistrano-rails', '~> 1.1.3'
 	# Add this if you're using rbenv
 	gem 'capistrano-rbenv'
+  gem 'capistrano-passenger'
 end
